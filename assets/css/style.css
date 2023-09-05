@@ -112,7 +112,8 @@ h1 {
     text-transform: uppercase;
     color: var(--color-secondary);
     text-decoration: none;
-    margin: 0;
+    margin: 0 auto 0 auto;
+    width: 90%;
 
     font-size: 3rem;
     text-shadow: 0 0 3px var(--color-secondary);
@@ -153,9 +154,9 @@ h4 {
 }
 
 .programme h1 {
-    width: 100%;
+    width: 90%;
     text-align: center;
-    margin: var(--spacing-m) 0 0px 0;
+    margin: var(--spacing-m) auto 0px auto;
 }
 
 .topHead {
@@ -217,7 +218,6 @@ h4 {
 
 }
 
-
 .infoRotation,
 .progInfo {
     display: none;
@@ -258,6 +258,10 @@ h4 {
     width: fit-content;
     border-radius: 999px;
     margin: 5vw 0 3vw 0;
+}
+
+.TRUE .infos {
+    display: none;
 }
 
 .table>div {
@@ -504,39 +508,16 @@ small {
 }
 
 
-/* ROTATION SCREEN */
-.need-rotation {
-    position: fixed;
-    width: 100vw;
-    height: calc(var(--vh, 1vh) * 100);
-    background-color: rgba(0, 0, 0, 0.8);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    z-index: 999;
-
-    display: none;
-}
-
-.need-rotation img {
-    width: 50%;
-    max-width: 180px;
-}
-
-
-
 @media screen and (max-width: 750px) and (orientation:portrait) {
+    .infos {
+        grid-template-columns: auto !important
+    }
+}
+
+@media screen and (max-width: 950px) and (orientation:portrait) {
     .programme {
         display: block !important;
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 
     .table {
@@ -570,7 +551,7 @@ small {
     }
 
     .infos {
-        grid-template-columns: auto;
+        grid-template-columns: auto auto;
     }
 
     .close {
@@ -578,14 +559,23 @@ small {
     }
 }
 
-@media screen and (max-width: 750px) and (orientation:landscape) {
+@media screen and (max-width: 950px) and (orientation:landscape) {
 
     .topHead {
         top: var(--spacing-s) !important;
     }
 
+    .topHead span {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
     h2 {
         bottom: var(--spacing-s) !important;
+        font-size: 1.4rem;
     }
 
     .programme {
@@ -593,8 +583,9 @@ small {
     }
 
     #demo {
-        top: 20px;
-        left: 10px;
+        top: 10px;
+        left: 5px;
+        font-size: 0.7rem;
     }
 
     .close {
