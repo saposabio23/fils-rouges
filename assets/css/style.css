@@ -40,6 +40,7 @@ p {
 
 body {
     background-color: var(--color-primary);
+    overflow: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -73,6 +74,7 @@ a:hover {
     color: inherit;
     -webkit-animation: clignottement .1s infinite linear;
     animation: clignottement .1s infinite linear;
+    cursor: pointer;
 }
 
 p {
@@ -107,25 +109,19 @@ p {
 
 /* TITRES */
 h1 {
-    position: fixed;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    top: var(--spacing-s);
     text-transform: uppercase;
     color: var(--color-secondary);
     text-decoration: none;
-    z-index: 3;
+    margin: 0;
 
-    font-size: 4.5vw;
-
-    text-shadow: 0 0 3px var(--color-primary);
+    font-size: 3rem;
     text-shadow: 0 0 3px var(--color-secondary);
 }
 
 h1>a,
 h2>a {
     text-decoration: none;
+    text-shadow: 0 0 3px var(--color-secondary);
 }
 
 h2 {
@@ -133,16 +129,13 @@ h2 {
     width: 100%;
     text-align: center;
     margin: 0;
-    bottom: var(--spacing-s);
+    bottom: var(--spacing-m);
     font-weight: 100;
     text-decoration: none;
     color: var(--color-secondary);
     z-index: 3;
 
-    font-size: 3vw;
-    text-shadow: 0 0 2px var(--color-primary);
-
-    text-shadow: 0 0 3px var(--color-secondary);
+    font-size: 2rem;
 }
 
 h3 {
@@ -159,9 +152,136 @@ h4 {
     font-size: 1.7rem;
 }
 
+.programme h1 {
+    width: 100%;
+    text-align: center;
+    margin: var(--spacing-m) 0 0px 0;
+}
+
+.topHead {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    top: var(--spacing-m);
+    color: var(--color-secondary);
+    text-decoration: none;
+    z-index: 3;
+
+    font-size: 1.7rem;
+    text-shadow: 0 0 3px var(--color-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.topHead a {
+    text-shadow: 0 0 3px var(--color-secondary);
+}
+
+#demo {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    font-size: 1rem;
+    border: 2px dashed var(--color-secondary);
+    border-radius: 999px;
+    padding: 8px 14px 4px 14px;
+    margin: 10px auto;
+    text-transform: lowercase !important;
+    width: fit-content;
+    color: var(--color-secondary);
+    z-index: 99;
+    transform: rotate(-20deg);
+}
 
 /* MISCELANIOUS */
-.big a {
+.programme {
+    z-index: 998;
+    position: fixed;
+    background-color: #E6351E8C;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 0 50px 0;
+    box-sizing: border-box;
+    border: none;
+    backdrop-filter: blur(20px);
+    color: var(--color-secondary);
+    display: grid;
+    font-size: 1.7rem;
+    line-height: 1.2;
+    overflow: scroll;
+    text-align: center;
+
+    display: none;
+    overscroll-behavior: contain;
+
+}
+
+
+.infoRotation,
+.progInfo {
+    display: none;
+}
+
+.close {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    text-shadow: 0 0 3px var(--color-primary);
+    height: 60px;
+    width: fit-content;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    aspect-ratio: 1;
+    transform: rotate(10deg);
+    box-shadow: 0 0 30px var(--color-secondary);
+    text-decoration: none;
+    font-size: 3rem;
+    z-index: 999;
+
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.table {
+    width: 80%;
+    margin: auto;
+}
+
+.TRUE {
+    border: 2px dashed var(--color-secondary);
+    width: fit-content;
+    border-radius: 999px;
+    margin: 5vw 0 3vw 0;
+}
+
+.table>div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border-bottom: 2px dashed var(--color-secondary);
+    color: var(--color-secondary);
+    padding: 12px 20px 10px 20px;
+    justify-content: initial;
+    /*! text-align: left; */
+}
+
+.infos {
+    display: grid;
+    color: var(--color-secondary);
+    text-align: left;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    padding: 0 10px 0 50px;
+}
+
+
+.big a,
+.final a {
     text-shadow: 0 0 3px var(--color-primary);
 }
 
@@ -219,20 +339,6 @@ small {
     margin-bottom: var(--spacing-s) !important;
 }
 
-#demo {
-    font-size: 1.5rem !important;
-    border: 2px dashed var(--color-secondary);
-    border-radius: 999px;
-    padding: 11px 16px 8px 16px;
-    font-size: 3vw;
-    margin: 20px 0;
-    z-index: 1;
-    text-transform: lowercase !important;
-
-    background-color: var(--color-primary);
-    text-shadow: 0 0 3px var(--color-secondary);
-
-}
 
 /* OVERLAYS */
 .box {
@@ -328,7 +434,9 @@ small {
     /*! filter: blur(0px); */
 }
 
-.gauche {}
+.big .gauche {
+    padding: 20px;
+}
 
 .droite {
     padding: 20px;
@@ -426,19 +534,87 @@ small {
 
 
 @media screen and (max-width: 750px) and (orientation:portrait) {
-    .need-rotation {
-        display: -webkit-box !important;
-        display: -ms-flexbox !important;
-        display: flex !important;
+    .programme {
+        display: block !important;
+        font-size: 1rem;
+    }
+
+    .table {
+        width: 90%;
+    }
+
+    .infoRotation {
+        display: flex;
+        position: fixed;
+        bottom: 15px;
+        left: 50vw;
+        color: var(--color-primary);
+        transform: translateX(-50%);
+        align-items: center;
+        background-color: var(--color-secondary);
+        border-radius: 999px;
+        text-align: center;
+        justify-content: center;
+        padding: 8px 15px 5px 15px;
+        z-index: 999;
+    }
+
+    .infoRotation span {
+        width: max-content;
+        margin-right: 10px;
+        line-height: 1;
+    }
+
+    .infoRotation img {
+        width: 25px;
+    }
+
+    .infos {
+        grid-template-columns: auto;
+    }
+
+    .close {
+        display: none !important;
     }
 }
 
 @media screen and (max-width: 750px) and (orientation:landscape) {
-    .need-rotation {
+
+    .topHead {
+        top: var(--spacing-s) !important;
+    }
+
+    h2 {
+        bottom: var(--spacing-s) !important;
+    }
+
+    .programme {
+        display: none;
+    }
+
+    #demo {
+        top: 20px;
+        left: 10px;
+    }
+
+    .close {
         display: none !important;
     }
-    #demo {
-        font-size: 1.1rem !important;
+
+    #prog {
+        display: none !important;
     }
-    
+
+    .progInfo {
+        display: block !important;
+    }
+
+    .progInfo img {
+        width: 30px;
+        margin-top: 10px;
+    }
+
+    .block {
+        margin-bottom: 50px;
+    }
 }

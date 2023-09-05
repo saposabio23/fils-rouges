@@ -1,9 +1,8 @@
-var SPREADSHEET_ID_AND_TAB = "1CepMxBlqokqLrDMb84xbm3CkfmGTCF-mlHB-BtDu8KQ/1";
-
 var inside = document.querySelector('.inside')
+var table = document.querySelector('.table')
 
 fetch(
-  "https://opensheet.elk.sh/" + SPREADSHEET_ID_AND_TAB
+  "https://opensheet.elk.sh/1CepMxBlqokqLrDMb84xbm3CkfmGTCF-mlHB-BtDu8KQ/1"
 )
   .then((res) => res.json())
   .then((data) => {
@@ -46,6 +45,47 @@ fetch(
       droite.appendChild(lien);
 
       inside.appendChild(block);
+
+
+    });
+  });
+
+fetch(
+  "https://opensheet.elk.sh/1CepMxBlqokqLrDMb84xbm3CkfmGTCF-mlHB-BtDu8KQ/2"
+)
+  .then((res) => res.json())
+  .then((data) => {
+    data.forEach((row) => {
+
+      let block = document.createElement("div");
+      block.className = row.Type;
+
+      let heure = document.createElement("span");
+      heure.innerHTML = row.Heure;
+
+      let infos = document.createElement("div");
+      infos.className = 'infos';
+
+      let titre = document.createElement("span");
+      titre.innerHTML = row.Titre;
+
+      let auteurice = document.createElement("span");
+      auteurice.innerHTML = 'par ' + row.Auteurice;
+
+      Object.keys(data).forEach((key) => {
+
+        if (typeof data[key] == 'undefined') { 
+    
+            delete data[key];
+        }
+    });
+
+      block.appendChild(heure);
+      infos.appendChild(titre);
+      infos.appendChild(auteurice);
+
+      block.appendChild(infos);
+      table.appendChild(block);
 
 
     });
