@@ -18,36 +18,35 @@ fetch(
       gauche.className = 'cote gauche';
       block.appendChild(gauche);
 
+      let image = document.createElement("img");
+      image.src = row.Image;
+      image.className = 'imagex';
+      gauche.appendChild(image);
+
       let droite = document.createElement("div");
       droite.className = 'cote droite';
       block.appendChild(droite);
-
-
-      let image = document.createElement("img");
-      image.src = row.Lien;
-      image.className = 'imagex';
-      gauche.appendChild(image);
 
       let titre = document.createElement("h3");
       titre.innerHTML = '"' + row.Titre + '"';
       droite.appendChild(titre);
 
-      let numeros = document.createElement("small");
-      numeros.innerHTML = 'par ' + row.Auteur + ' · ' + row.Promo + '<sup>ème</sup> année · ' +  row.Durée + '"';
-      droite.appendChild(numeros);
-
       let sypnosis = document.createElement("p");
       sypnosis.innerHTML = row.Synopsis;
       droite.appendChild(sypnosis);
 
+      let numeros = document.createElement("small");
+      numeros.innerHTML = ' ' + row.Auteurices + ' · ' + row.Promo + '<sup>ème</sup> année · ' + row.Durée + '"';
+      droite.appendChild(numeros);
 
-      // let mood = document.createElement("span");
-      // mood.className = 'mood'
-      // mood.style.backgroundColor = row.Mood;
-      // droite.appendChild(mood);
+      let lien = document.createElement("a");
+      lien.className = 'lien';
+      lien.href = row.lien;
+      lien.innerHTML = '→ lien';
+      droite.appendChild(lien);
 
       inside.appendChild(block);
-      
+
 
     });
   });
