@@ -72,14 +72,6 @@ fetch(
       let auteurice = document.createElement("span");
       auteurice.innerHTML = row.Auteurice;
 
-      Object.keys(data).forEach((key) => {
-
-        if (typeof data[key] == 'undefined') { 
-    
-            delete data[key];
-        }
-    });
-
       block.appendChild(heure);
       infos.appendChild(titre);
       infos.appendChild(auteurice);
