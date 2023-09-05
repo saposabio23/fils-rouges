@@ -70,7 +70,7 @@ fetch(
       titre.innerHTML = row.Titre;
 
       let auteurice = document.createElement("span");
-      auteurice.innerHTML = 'par ' + row.Auteurice;
+      auteurice.innerHTML = row.Auteurice;
 
       Object.keys(data).forEach((key) => {
 
