@@ -52,7 +52,7 @@ function jours() {
   var joursmanquants = Math.floor(distanceJ / (1000 * 60 * 60 * 24));
 
   if (joursmanquants < 0) {
-    demo.innerHTML = "c'est aujourd'hui!";
+    demo.innerHTML = "JOUR J!";
     lien.style.display = 'block';
   }
 
@@ -74,12 +74,13 @@ function activeProgram() {
   if (programme.classList.contains("on")) {
     programme.classList.remove("on")
     programme.style.display = "none";
-    progClose.innerHTML = "⟡";
+    progClose.innerHTML = "❡";
   }
   else {
     programme.classList.add("on")
     progClose.style.opacity = "1";
     programme.style.display = "block";
+    // programme.scrollTo({ top: 0, behavior: 'smooth' });
     progClose.innerHTML = "×";
   }
 }
@@ -98,10 +99,21 @@ function scrollShowProgram() {
   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
     progClose.style.opacity = "1";
   }
-  else if (programme.classList.contains("on"))  {
+  else if (programme.classList.contains("on")) {
     progClose.style.opacity = "1";
   }
   else {
     progClose.style.opacity = "0";
   }
 }
+
+
+// PROGRAMME ON click
+
+document.addEventListener('click', function(e){
+  if(e.target.className=="pro"){
+    programme.classList.remove("on")
+    programme.style.display = "none";
+    progClose.innerHTML = "❡";
+  }
+})

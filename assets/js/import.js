@@ -11,7 +11,8 @@ fetch(
 
       let block = document.createElement("div");
       block.className = 'block';
-      block.id = 'blocks';
+      block.id = row.id;
+      // block.id = 'blocks';
 
       let gauche = document.createElement("div");
       gauche.className = 'cote gauche';
@@ -57,28 +58,21 @@ fetch(
   .then((data) => {
     data.forEach((row) => {
 
-      let block = document.createElement("div");
+      let block = document.createElement("a");
       block.className = row.Type;
-
-      let heure = document.createElement("span");
-      heure.innerHTML = row.Heure;
-
-      let infos = document.createElement("div");
-      infos.className = 'infos';
+      block.href = '#' + row.id;
 
       let titre = document.createElement("span");
       titre.innerHTML = row.Titre;
+      block.appendChild(titre);
 
       let auteurice = document.createElement("span");
       auteurice.innerHTML = row.Auteurice;
+      block.appendChild(auteurice);
 
-      block.appendChild(heure);
-      infos.appendChild(titre);
-      infos.appendChild(auteurice);
-
-      block.appendChild(infos);
       table.appendChild(block);
 
 
     });
   });
+  
