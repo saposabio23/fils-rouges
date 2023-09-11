@@ -76,3 +76,12 @@ fetch(
     });
   });
   
+  // PROGRAMME ON click
+
+document.addEventListener('click', function(e){
+  if(e.target.className=="pro"){
+    programme.classList.remove("on")
+    programme.style.display = "none";
+    progClose.innerHTML = "❡";
+  }
+})

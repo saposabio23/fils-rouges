@@ -74,7 +74,7 @@ a {
 a:hover {
     color: inherit;
     -webkit-animation: clignottement .1s infinite linear;
-    animation: clignottement .1s infinite linear;
+    animation: clignottement .1s 3 linear;
     cursor: pointer;
 }
 
