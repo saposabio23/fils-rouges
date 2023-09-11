@@ -285,8 +285,7 @@ h4 {
 }
 
 .table>a {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     border-bottom: 2px dashed var(--color-secondary);
     color: var(--color-secondary);
     padding: 12px 20px 10px 20px;
@@ -301,6 +300,7 @@ h4 {
 
 .table span:nth-last-child(odd){
     text-align: right;
+    max-width: 70%;
 }
 
 
