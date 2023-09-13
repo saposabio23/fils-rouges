@@ -28,7 +28,7 @@ fetch(
       block.appendChild(droite);
 
       let titre = document.createElement("h3");
-      titre.innerHTML = '"' + row.Titre + '"';
+      titre.innerHTML = row.Titre;
       droite.appendChild(titre);
 
       let sypnosis = document.createElement("p");
@@ -51,6 +51,8 @@ fetch(
     });
   });
 
+
+
 fetch(
   "https://opensheet.elk.sh/1CepMxBlqokqLrDMb84xbm3CkfmGTCF-mlHB-BtDu8KQ/2"
 )
@@ -63,10 +65,12 @@ fetch(
       block.href = '#' + row.id;
 
       let titre = document.createElement("span");
+      titre.className = "pro";
       titre.innerHTML = row.Titre;
       block.appendChild(titre);
 
       let auteurice = document.createElement("span");
+      auteurice.className = "pro";
       auteurice.innerHTML = row.Auteurice;
       block.appendChild(auteurice);
 
@@ -76,12 +80,3 @@ fetch(
     });
   });
   
-  // PROGRAMME ON click
-
-document.addEventListener('click', function(e){
-  if(e.target.className=="pro"){
-    programme.classList.remove("on")
-    programme.style.display = "none";
-    progClose.innerHTML = "❡";
-  }
-})

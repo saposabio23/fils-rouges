@@ -7,6 +7,15 @@
 
 }
 
+@font-face {
+    font-family: 'rubikregular';
+    src: url('../fonts/rubik-regular-webfont.woff2') format('woff2'),
+         url('../fonts/rubik-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap
+}
+
 :root {
     --spacing-l: 30px;
     --spacing-m: 20px;
@@ -64,7 +73,7 @@ html {
 }
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
     color: inherit;
     display: inline;
     -webkit-text-decoration-style: dashed;
@@ -81,9 +90,11 @@ a:hover {
 p {
     text-align: center;
     width: 90%;
-    font-size: 1.2rem;
+    font-size: 1.7vmax;
     line-height: 1.2;
     margin: 8px 0 20px 0;
+    font-family: 'rubikregular', sans-serif;
+    /*! font-weight: 500; */
 }
 
 
@@ -116,7 +127,7 @@ h1 {
     margin: 0 auto 0 auto;
     width: 90%;
 
-    font-size: 3rem;
+    font-size: 5vmax;
     text-shadow: 0 0 3px var(--color-secondary);
 }
 
@@ -137,21 +148,21 @@ h2 {
     color: var(--color-secondary);
     z-index: 3;
 
-    font-size: 1.8rem;
+    font-size: 3vw;
 }
 
 h3 {
     margin: 0;
     text-align: center;
     /* text-transform: uppercase; */
-    font-size: 1.7rem;
+    font-size: 3vmax;
 }
 
 
 h4 {
     margin: 0;
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 2.3vmax;
 }
 
 .programme h1 {
@@ -170,7 +181,7 @@ h4 {
     text-decoration: none;
     z-index: 3;
 
-    font-size: 1.7rem;
+    font-size: 2.5vmax;
     text-shadow: 0 0 3px var(--color-primary);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -187,8 +198,8 @@ h4 {
 
 #demo {
     position: fixed;
-    top: 30px;
-    left: 20px;
+    top: 20px;
+    left: 10px;
     font-size: 1rem;
     /* border: 2px dashed var(--color-secondary); */
     border-radius: 999px;
@@ -203,12 +214,13 @@ h4 {
     -webkit-transform: rotate(-20deg);
         -ms-transform: rotate(-20deg);
             transform: rotate(-20deg);
+    font-family: 'rubikregular', sans-serif;
 }
 
 .moovingBorder, .TRUE {
     outline: 3px dashed var(--color-secondary);
-    -webkit-box-shadow: 0 0 0 3px var(--color-primary);
-            box-shadow: 0 0 0 3px var(--color-primary);
+    -webkit-box-shadow: 0 0 0 2px var(--color-primary);
+            box-shadow: 0 0 0 2px var(--color-primary);
     -webkit-animation: 1s animateBorder infinite;
             animation: 1s animateBorder infinite;
 }
@@ -216,16 +228,16 @@ h4 {
 @-webkit-keyframes animateBorder {
     to {
         outline-color: var(--color-primary);
-        -webkit-box-shadow: 0 0 0 3px var(--color-secondary);
-                box-shadow: 0 0 0 3px var(--color-secondary);
+        -webkit-box-shadow: 0 0 0 2px var(--color-secondary);
+                box-shadow: 0 0 0 2px var(--color-secondary);
     }
 }
 
 @keyframes animateBorder {
     to {
         outline-color: var(--color-primary);
-        -webkit-box-shadow: 0 0 0 3px var(--color-secondary);
-                box-shadow: 0 0 0 3px var(--color-secondary);
+        -webkit-box-shadow: 0 0 0 2px var(--color-secondary);
+                box-shadow: 0 0 0 2px var(--color-secondary);
     }
 }
 
@@ -236,13 +248,13 @@ h4 {
     background-color: var(--color-primary);
     width: 100vw;
     height: 100vh;
-    padding: 0 0 50px 0;
+    padding: 0 0 70px 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     border: none;
     color: var(--color-secondary);
     display: grid;
-    font-size: 1.7rem;
+    font-size: 2.5vmax;
     line-height: 1.2;
     overflow: scroll;
     text-align: center;
@@ -300,6 +312,7 @@ h4 {
 .table {
     width: 80%;
     margin: auto;
+    font-family: 'rubikregular', sans-serif;
 }
 
 .TRUE {
@@ -307,7 +320,7 @@ h4 {
     width: -moz-fit-content;
     width: fit-content;
     border-radius: 999px;
-    margin: 5vw 0 3vw 0;
+    margin: 5vmax 0 3vw 0;
     text-shadow: none !important;
     border-bottom: none !important;
 }
@@ -327,7 +340,7 @@ h4 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    border-bottom: 2px dashed var(--color-secondary);
+    border-bottom: 1px dashed var(--color-secondary);
     color: var(--color-secondary);
     padding: 12px 20px 10px 20px;
     -webkit-box-pack: justify;
@@ -373,7 +386,10 @@ small {
     text-align: center;
     max-width: 400px;
 
-    font-size: 1rem;
+    font-size: 1.3vmax;
+    font-family: Rubik;
+    font-family: 'rubikregular', sans-serif;
+    /*! font-weight: 500; */
 }
 
 .lien {
@@ -514,13 +530,23 @@ small {
     /*! filter: blur(0px); */
 }
 
-.big .gauche {
+.big .gauche, .final .gauche {
     padding: 20px;
+    background-color: var(--color-secondary);
 }
 
+
 .droite {
+    padding: 30px 30px 10px 30px;
+}
+
+.final .droite{
     padding: 30px;
 }
+
+.gauche {
+    background-color: var(--color-primary);
+  }
 
 .turn {
     -webkit-animation: tourning 4s linear infinite;
@@ -558,10 +584,10 @@ small {
     position: fixed;
     z-index: 0;
     height: calc(var(--vh, 1vh) * 100);
-    width: 2px;
+    width: 0;
     top: 0;
     /* background-color: var(--color-secondary); */
-    border: 1.5px dashed var(--color-secondary);
+    border: 1px dashed var(--color-secondary);
 
     /* display: none; */
 }
@@ -593,7 +619,7 @@ small {
 @media screen and (max-width: 950px) and (orientation:portrait) {
     .programme {
         display: block !important;
-        font-size: 1.4rem;
+        font-size: 3vmax;
     }
 
     .table {
@@ -622,6 +648,7 @@ small {
                 justify-content: center;
         padding: 8px 15px 5px 15px;
         z-index: 999;
+        font-family: 'rubikregular', sans-serif;
     }
 
     .infoRotation span {
@@ -649,16 +676,16 @@ small {
     }
 
     .topHead span {
-        font-size: 1rem;
+        font-size: 3vmax;
     }
 
     h1 {
-        font-size: 1.7rem;
+        font-size: 5vmax;
     }
 
     h2 {
         bottom: var(--spacing-s) !important;
-        font-size: 1.4rem;
+        /*! font-size: 1.4rem; */
     }
 
     .programme {
@@ -669,6 +696,10 @@ small {
         top: 15px;
         left: 10px;
         font-size: 0.7rem;
+    }
+
+    .droite {
+        padding: 15px;
     }
 
     .close {
