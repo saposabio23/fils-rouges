@@ -19,7 +19,7 @@ fetch(
       block.appendChild(gauche);
 
       let image = document.createElement("img");
-      image.src = row.Image;
+      image.src = 'img/' + row.Image;
       image.className = 'imagex';
       gauche.appendChild(image);
 
