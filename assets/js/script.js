@@ -62,8 +62,6 @@ countdown()
 jours()
 
 
-
-
 // PROGRAMME DISPLAY
 var programme = document.querySelector('.programme')
 var progText = document.querySelector('#prog')
