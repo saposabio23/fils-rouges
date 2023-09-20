@@ -726,7 +726,7 @@ small {
     }
 
     .topHead span {
-        font-size: 3vmax;
+        font-size: 2.5vmax;
     }
 
     h1 {
@@ -735,7 +735,7 @@ small {
 
     h2 {
         bottom: var(--spacing-s) !important;
-        /*! font-size: 1.4rem; */
+        font-size: 2.5vmax;
     }
 
     .programme {
