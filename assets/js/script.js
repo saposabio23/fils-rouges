@@ -52,8 +52,7 @@ function jours() {
   var joursmanquants = Math.floor(distanceJ / (1000 * 60 * 60 * 24));
 
   if (joursmanquants < 0) {
-    demo.innerHTML = "JOUR J!";
-    lien.style.display = 'block';
+    demo.innerHTML = "C'est ce soir!";
   }
 
 }
