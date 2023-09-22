@@ -571,7 +571,6 @@ small {
     justify-content: center;
     border-radius: 50%;
     background-color: var(--color-secondary);
-    border: 2px solid var(--color-secondary);
     -webkit-box-shadow: 0 0px 40px hsla(0, 0%, 0%, 0.1);
     box-shadow: 0 0px 40px var(--color-secondary);
 
